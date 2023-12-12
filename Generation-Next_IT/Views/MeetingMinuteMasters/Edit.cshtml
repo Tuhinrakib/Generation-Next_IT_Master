@@ -1,0 +1,80 @@
+﻿@model Generation_Next_IT.Models.MeetingMinuteMaster
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MeetingMinuteMaster</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MeetingMinuteMasterID" />
+            <div class="form-group">
+                <label asp-for="CustomerType" class="control-label"></label>
+                <select asp-for="CustomerType" class="form-control"></select>
+                <span asp-validation-for="CustomerType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorporateCustomerID" class="control-label"></label>
+                <select asp-for="CorporateCustomerID" class="form-control" asp-items="ViewBag.CorporateCustomerID"></select>
+                <span asp-validation-for="CorporateCustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndividualCustomerID" class="control-label"></label>
+                <select asp-for="IndividualCustomerID" class="form-control" asp-items="ViewBag.IndividualCustomerID"></select>
+                <span asp-validation-for="IndividualCustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingPlace" class="control-label"></label>
+                <input asp-for="MeetingPlace" class="form-control" />
+                <span asp-validation-for="MeetingPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AttendsFromClient" class="control-label"></label>
+                <input asp-for="AttendsFromClient" class="form-control" />
+                <span asp-validation-for="AttendsFromClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AttendsFromHost" class="control-label"></label>
+                <input asp-for="AttendsFromHost" class="form-control" />
+                <span asp-validation-for="AttendsFromHost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agenda" class="control-label"></label>
+                <input asp-for="Agenda" class="form-control" />
+                <span asp-validation-for="Agenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discussion" class="control-label"></label>
+                <input asp-for="Discussion" class="form-control" />
+                <span asp-validation-for="Discussion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Decision" class="control-label"></label>
+                <input asp-for="Decision" class="form-control" />
+                <span asp-validation-for="Decision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

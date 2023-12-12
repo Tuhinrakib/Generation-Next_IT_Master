@@ -1,0 +1,15 @@
+﻿@model Generation_Next_IT.Models.ViewModel.ProductServiceVM
+<tr>
+    <td>#</td>
+    <td>
+        @Html.DropDownListFor(x=>x.ProductServiceID,ViewBag.Products as SelectList,"---Select Products---",new{@class="form-select"})
+    </td>
+    <td>
+        <input asp-for="Quantity" class="form-control" type="number" />
+    </td>
+    <td>
+        <input asp-for="Unit" class="form-control" type="number"/>
+    </td>
+    <td><a id="EditProduct" class="btn btn-success btn-sm"></a>Edit</td>
+    <td><a id="DeleteProduct" class="btn btn-danger btn-sm"></a>Delete</td>
+</tr>
